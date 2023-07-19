@@ -5,3 +5,40 @@
     background-color: #009578;
     border-radius: 15px;
 }
+
+.kanban * {
+    font-family: monospace;
+}
+
+.kanban__column{
+    flex: 1;
+}
+
+.kanban__column:not(:last-child){
+    margin-right: 30px;
+}
+
+.kanban__column-title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: antiquewhite;
+    user-select: none;
+}
+
+.kanban__item-input{
+    padding: 10px 15px;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.kanban__dropzone{
+    height: 10px;
+    transition: background 0.15s, height 0.15s;
+}
+
+.kanban__dropzone--active{
+    height: 25px;
+    background-color: rgba(0,0,0, 0.25);
+}
