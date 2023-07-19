@@ -1,0 +1,8 @@
+.kanban{
+    display: flex;
+    padding: 30px;
+    width: 750px;
+    background-color: #009578;
+    border-radius: 15px;
+
+}
