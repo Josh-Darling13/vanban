@@ -1,7 +1,16 @@
 // Static methods to interact with local storage
 
 export default class KanbanAPI {
+    static getItems(columnID){
+        const column = read().find(column => column.id == columnID);
 
+        if(!column){
+            return [];
+        }
+
+        return column.items;
+          
+    }
 }
 
 function read () {
