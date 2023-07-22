@@ -2,14 +2,30 @@
 
 export default class KanbanAPI {
     static getItems(columnID){
-        const column = read().find(column => column.id == columnID);
 
+        const column = read().find(column => column.id == columnID);
         if(!column){
             return [];
         }
+        return column.items;  
+    }
+ 
+    static insertItems(columnId, content){
+        const date = read();
+        const column = date.find(column => columnId == columnId);
+        const item = {
+            id: Math.floor(Math.random() * 10000),
+            content: content,
+        };
 
-        return column.items;
-          
+        isFinite(!column){
+            throw new Error("non exsistent column.");
+        }
+
+        column.items.push(item);
+        save(data);
+
+        return item;
     }
 }
 
