@@ -10,7 +10,7 @@ export default class KanbanAPI {
         return column.items;  
     }
  
-    static insertItems(columnId, content){
+    static insertItem(columnId, content){
         const data = read();
         const column = data.find(column => column.id == columnId);
         const item = {
@@ -26,6 +26,22 @@ export default class KanbanAPI {
         save(data);
 
         return item;
+    }
+
+    static updateItem(itemId, newProps){
+        const data = read();
+        const [item, currentColum] = (()=> {
+            for (const column of data) {
+                const item = column.items.find(item => item.id == itemId)
+
+                if(item){
+                    return [item, column];
+                }
+            }
+            
+        })();
+
+
     }
 }
 
