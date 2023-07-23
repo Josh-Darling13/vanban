@@ -11,14 +11,14 @@ export default class KanbanAPI {
     }
  
     static insertItems(columnId, content){
-        const date = read();
-        const column = date.find(column => columnId == columnId);
+        const data = read();
+        const column = data.find(column => column.id == columnId);
         const item = {
             id: Math.floor(Math.random() * 10000),
-            content: content,
+            content
         };
 
-        isFinite(!column){
+        if (!column){
             throw new Error("non exsistent column.");
         }
 
